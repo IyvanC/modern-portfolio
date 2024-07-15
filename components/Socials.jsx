@@ -1,44 +1,26 @@
 import Link from "next/link";
 
 import {
-  RiYoutubeLine,
-  RiInstagramLine,
-  RiFacebookLine,
-  RiDribbbleLine,
-  RiGithubLine,
-  RiPinterestLine,
+  RiTwitterLine,
+  RiTelegramLine,
+  RiFilePaper2Line,
 } from "react-icons/ri";
 
 export const socialData = [
   {
-    name: "YouTube",
-    link: "https://youtube.com",
-    Icon: RiYoutubeLine,
+    name: "Twitter",
+    link: "https://x.com/electrauracoin/status/",
+    Icon: RiTwitterLine,
   },
   {
-    name: "Instagram",
-    link: "https://instagram.com",
-    Icon: RiInstagramLine,
+    name: "Telegram",
+    link: "https://t.me/electraura",
+    Icon: RiTelegramLine,
   },
   {
-    name: "Facebook",
-    link: "https://facebook.com",
-    Icon: RiFacebookLine,
-  },
-  {
-    name: "Dribbble",
-    link: "https://dribbble.com",
-    Icon: RiDribbbleLine,
-  },
-  {
-    name: "Pinterest",
-    link: "https://pinterest.com",
-    Icon: RiPinterestLine,
-  },
-  {
-    name: "Github",
-    link: "https://github.com/sanidhyy/modern-portfolio",
-    Icon: RiGithubLine,
+    name: "WhitePaper",
+    link: "https://jumpshare.com/v/hvjRV2cxNp50ThyCkF5F",
+    Icon: RiFilePaper2Line,
   },
 ];
 
