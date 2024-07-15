@@ -33,10 +33,7 @@ const Home = () => {
             exit="hidden"
             className="max-w-sm xl:max-w-xl mx-auto xl:mx-0 mb-10 xl:mb-16"
           >
-            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Voluptate,
-            exercitationem harum, quia nulla temporibus deleniti libero veniam
-            vero beatae numquam ducimus illum ab similique ipsam tempore fugit
-            quod laudantium debitis.
+            ElectrAura introduces EAURA, a groundbreaking cryptocurrency combining the iPod Shuffle's inspiration with EMS microcurrent technology, enabling direct donations and personal replies from artists. Our mobile app tracks health metrics and rewards users with EAURA currency for walking and listening to music, aiming to unify health, music, and cryptocurrency in a unique, immersive experience.
           </motion.p>
 
           {/* btn */}
