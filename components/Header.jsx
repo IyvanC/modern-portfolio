@@ -11,10 +11,10 @@ const Header = () => {
           {/* logo */}
           <Link href="/">
             <Image
-              src="/ElectrAuraLogo.png"
+              src="/EALogo.png"
               alt="logo"
-              width={72}
-              height={72}
+              width={36}
+              height={36}
               priority
             />
           </Link>

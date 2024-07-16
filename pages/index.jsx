@@ -20,8 +20,8 @@ const Home = () => {
             exit="hidden"
             className="h1"
           >
-            <span className="text-accent">ElectrAura: </span>
-            Harmonizing <br />Health & Music with Web3{" "}
+           Transforming Health <br />& Music: {" "}
+            <span className="text-accent">ElectrAura</span>
             
           </motion.h1>
 
