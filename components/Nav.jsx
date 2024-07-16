@@ -5,28 +5,32 @@ import { usePathname } from "next/navigation";
 import {
   HiHome,
   HiUser,
-  HiViewColumns,
-  HiRectangleGroup,
-  HiChatBubbleBottomCenterText,
-  HiEnvelope,
+  HiCurrencyDollar,
+  HiOutlineStar,
+  HiOutlineDevicePhoneMobile,
+  HiOutlineMap,
+  HiOutlineCog,
+  HiOutlineHeart,
+  HiOutlinePencil,
+  HiOutlineQuestionMarkCircle,
+  HiOutlineChatBubbleOvalLeftEllipsis,
+  HiOutlineShieldCheck,
 } from "react-icons/hi2";
 
 // nav data
 export const navData = [
-  { name: "home", path: "/", Icon: HiHome },
-  //{ name: "about", path: "/about", Icon: HiUser },
-  { name: "services", path: "/services", Icon: HiRectangleGroup },
-  { name: "work", path: "/work", Icon: HiViewColumns },
-  {
-    name: "testimonials",
-    path: "/testimonials",
-    Icon: HiChatBubbleBottomCenterText,
-  },
-  {
-    name: "contact",
-    path: "/contact",
-    Icon: HiEnvelope,
-  },
+  { name: "Home", path: "/", Icon: HiHome },
+  { name: "About Us", path: "/about", Icon: HiUser },
+  { name: "EAURA: Our Cryptocurrency", path: "/eaura", Icon: HiCurrencyDollar },
+  { name: "Features", path: "/features", Icon: HiOutlineStar },
+  { name: "The Mobile App", path: "/mobileapp", Icon: HiOutlineDevicePhoneMobile },
+  { name: "Roadmap", path: "/roadmap", Icon: HiOutlineMap },
+  { name: "Custom Hardware Project", path: "/hardware", Icon: HiOutlineCog },
+  { name: "Get Involved", path: "/get-involved", Icon: HiOutlineHeart },
+  { name: "Blog", path: "/blog", Icon: HiOutlinePencil },
+  { name: "FAQs", path: "/faqs", Icon: HiOutlineQuestionMarkCircle },
+  { name: "Support", path: "/support", Icon: HiOutlineChatBubbleOvalLeftEllipsis },
+  { name: "Legal", path: "/legal", Icon: HiOutlineShieldCheck },
 ];
 
 const Nav = () => {
@@ -43,7 +47,7 @@ const Nav = () => {
             href={link.path}
             key={i}
           >
-            {/* tolltip */}
+            {/* tooltip */}
             <div
               role="tooltip"
               className="absolute pr-14 right-0 hidden xl:group-hover:flex"

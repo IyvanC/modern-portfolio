@@ -3,7 +3,7 @@ import { motion } from "framer-motion";
 import TestimonialSlider from "../../components/TestimonialSlider";
 import { fadeIn } from "../../variants";
 
-const Testimonials = () => {
+const MobileApp = () => {
   return (
     <div className="h-full bg-primary/30 py-32 text-center">
       <div className="container mx-auto h-full flex flex-col justify-center">
@@ -31,4 +31,4 @@ const Testimonials = () => {
   );
 };
 
-export default Testimonials;
+export default MobileApp;
