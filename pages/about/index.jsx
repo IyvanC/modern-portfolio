@@ -1,102 +1,18 @@
 import { motion } from "framer-motion";
-import { useState } from "react";
-import CountUp from "react-countup";
-import {
-  FaCss3,
-  FaFigma,
-  FaHtml5,
-  FaJs,
-  FaReact,
-  FaWordpress,
-} from "react-icons/fa";
-import {
-  SiAdobephotoshop,
-  SiAdobexd,
-  SiFramer,
-  SiNextdotjs,
-} from "react-icons/si";
-
 import Avatar from "../../components/Avatar";
 import Circles from "../../components/Circles";
 import { fadeIn } from "../../variants";
-
-//  data
-export const aboutData = [
-  {
-    title: "skills",
-    info: [
-      {
-        title: "Web Development",
-        icons: [
-          FaHtml5,
-          FaCss3,
-          FaJs,
-          FaReact,
-          SiNextdotjs,
-          SiFramer,
-          FaWordpress,
-        ],
-      },
-      {
-        title: "UI/UX Design",
-        icons: [FaFigma, SiAdobexd, SiAdobephotoshop],
-      },
-    ],
-  },
-  {
-    title: "awards",
-    info: [
-      {
-        title: "Webby Awards - Honoree",
-        stage: "2011 - 2012",
-      },
-      {
-        title: "Adobe Design Achievement Awards - Finalist",
-        stage: "2009 - 2010",
-      },
-    ],
-  },
-  {
-    title: "experience",
-    info: [
-      {
-        title: "UX/UI Designer - XYZ Company",
-        stage: "2012 - 2023",
-      },
-      {
-        title: "Web Developer - ABC Agency",
-        stage: "2010 - 2012",
-      },
-      {
-        title: "Intern - DEF Corporation",
-        stage: "2008 - 2010",
-      },
-    ],
-  },
-  {
-    title: "credentials",
-    info: [
-      {
-        title: "Web Development - ABC University, LA, CA",
-        stage: "2011",
-      },
-      {
-        title: "Computer Science Diploma - AV Technical Institute",
-        stage: "2009",
-      },
-      {
-        title: "Certified Graphic Designer - ABC Institute, Los Angeles, CA",
-        stage: "2006",
-      },
-    ],
-  },
-];
+import { useEffect, useState } from "react";
 
 const About = () => {
-  const [index, setIndex] = useState(0);
+  const [isClient, setIsClient] = useState(false);
+
+  useEffect(() => {
+    setIsClient(true);
+  }, []);
 
   return (
-    <div className="h-full bg-primary/30 py-32 text-center xl:text-left">
+    <div className="min-h-screen bg-primary/30 py-32 text-center xl:text-left overflow-y-auto">
       <Circles />
 
       {/* avatar img */}
@@ -110,9 +26,9 @@ const About = () => {
         <Avatar />
       </motion.div>
 
-      <div className="container mx-auto h-full flex flex-col items-center xl:flex-row gap-x-6">
+      <div className="container mx-auto flex flex-col items-center xl:items-start gap-x-6 px-4 xl:px-0">
         {/* text */}
-        <div className="flex-1 flex flex-col justify-center">
+        <div className="w-full xl:w-3/4 flex flex-col justify-center">
           <motion.h2
             variants={fadeIn("right", 0.2)}
             initial="hidden"
@@ -120,117 +36,106 @@ const About = () => {
             exit="hidden"
             className="h2"
           >
-            Captivating <span className="text-accent">stories</span> birth
-            magnificent designs.
+            About Us
           </motion.h2>
           <motion.p
             variants={fadeIn("right", 0.4)}
             initial="hidden"
             animate="show"
-            className="max-w-[500px] mx-auto xl:mx-0 mb-6 xl:mb-12 px-2 xl:px-0"
+            className="w-full xl:w-3/4 mx-auto mb-6 xl:mb-12 px-2 xl:px-0"
           >
-            10 years ago, I begin freelancing as a developer. Since then, I've
-            done remote work for agencies, consulted for startups, and
-            collabrated on digital products for business and consumer use.
+            At ElectrAura🩵🩻⚡️✨, we are envisioning a transformative future where health, music, and decentralized finance coexist in harmonic unison. Our unparalleled amalgamation of technological innovation, artistic inspiration, and forward-thinking approach sets us apart. We are relentlessly dedicated to creating a community where everyone can thrive while experiencing truly unique, immersive moments.
           </motion.p>
 
-          {/* counters */}
-          <motion.div
-            variants={fadeIn("right", 0.6)}
+          <motion.h3
+            variants={fadeIn("left", 0.2)}
             initial="hidden"
             animate="show"
-            className="hidden md:flex md:max-w-xl xl:max-w-none mx-auto xl:mx-0 mb-8"
+            exit="hidden"
+            className="h3"
           >
-            <div className="flex flex-1 xl:gap-x-6">
-              {/* experience */}
-              <div className="relative flex-1 after:w-[1px] after:h-full after:bg-white/10 after:absolute after:top-0 after:right-0">
-                <div className="text-2xl xl:text-4xl font-extrabold text-accent mb-2">
-                  <CountUp start={0} end={10} duration={5} />
-                </div>
-                <div className="text-xs uppercase tracking-[1px] leading-[1.4] max-w-[100px]">
-                  Years of experience.
-                </div>
-              </div>
+            Our Vision
+          </motion.h3>
+          <motion.p
+            variants={fadeIn("left", 0.4)}
+            initial="hidden"
+            animate="show"
+            className="w-full xl:w-3/4 mx-auto mb-6 xl:mb-12 px-2 xl:px-0"
+          >
+            Our vision is to weave the worlds of health, music, and Web3 into a unified experience. We aim to dissolve barriers between artists and audiences, providing a platform where interactions are not only possible but personal. Our currency, EAURA, inspired by the iPod Shuffle and EMS microcurrent technology like Healy, is central to this vision. We believe in the power and potential of cryptocurrency and see it as a vessel for building relationships, enhancing health, and fostering an unparalleled appreciation of music. Through our mobile application, we aim to motivate our users towards healthier lifestyles, rewarding their efforts with EAURA and creating a perfect harmony between wellbeing and wealth creation. As we look forward to developing custom hardware at a $10 million market cap, we remain steadfast in shaping a world where health, music, and cryptocurrency interact fluidly, paving the way for transformative experiences.
+          </motion.p>
 
-              {/* clients */}
-              <div className="relative flex-1 after:w-[1px] after:h-full after:bg-white/10 after:absolute after:top-0 after:right-0">
-                <div className="text-2xl xl:text-4xl font-extrabold text-accent mb-2">
-                  <CountUp start={0} end={250} duration={5} />
-                </div>
-                <div className="text-xs uppercase tracking-[1px] leading-[1.4] max-w-[100px]">
-                  Satisfied clients.
-                </div>
-              </div>
-
-              {/* projects */}
-              <div className="relative flex-1 after:w-[1px] after:h-full after:bg-white/10 after:absolute after:top-0 after:right-0">
-                <div className="text-2xl xl:text-4xl font-extrabold text-accent mb-2">
-                  <CountUp start={0} end={650} duration={5} />
-                </div>
-                <div className="text-xs uppercase tracking-[1px] leading-[1.4] max-w-[100px]">
-                  Finished projects.
-                </div>
-              </div>
-
-              {/* awards */}
-              <div className="relative flex-1">
-                <div className="text-2xl xl:text-4xl font-extrabold text-accent mb-2">
-                  <CountUp start={0} end={8} duration={5} />
-                </div>
-                <div className="text-xs uppercase tracking-[1px] leading-[1.4] max-w-[100px]">
-                  Winning awards.
-                </div>
-              </div>
-            </div>
-          </motion.div>
+          <motion.h3
+            variants={fadeIn("left", 0.2)}
+            initial="hidden"
+            animate="show"
+            exit="hidden"
+            className="h3"
+          >
+            Our Team
+          </motion.h3>
+          <motion.p
+            variants={fadeIn("left", 0.4)}
+            initial="hidden"
+            animate="show"
+            className="w-full xl:w-3/4 mx-auto mb-6 xl:mb-12 px-2 xl:px-0"
+          >
+            ElectrAura's dedicated team consists of forward-thinking innovators, seasoned tech-savvy enthusiasts, and passionate musicians, all joined by the shared goal of creating output that truly matters.
+          </motion.p>
+          <motion.p
+            variants={fadeIn("left", 0.6)}
+            initial="hidden"
+            animate="show"
+            className="w-full xl:w-3/4 mx-auto mb-6 xl:mb-12 px-2 xl:px-0"
+          >
+            <strong>Founder & CEO - John Doe</strong><br />
+            With years of executive experience in fintech startups and a lifelong passion for music, John Doe envisioned ElectrAura's captivating blend of music, health, and cryptocurrency.
+          </motion.p>
+          <motion.p
+            variants={fadeIn("left", 0.8)}
+            initial="hidden"
+            animate="show"
+            className="w-full xl:w-3/4 mx-auto mb-6 xl:mb-12 px-2 xl:px-0"
+          >
+            <strong>CTO - Mary Smith</strong><br />
+            Specializing in blockchain technology and mobile app development, Mary Smith's technological expertise is crucial to the development and upkeep of EAURA and the ElectrAura mobile application.
+          </motion.p>
+          <motion.p
+            variants={fadeIn("left", 1.0)}
+            initial="hidden"
+            animate="show"
+            className="w-full xl:w-3/4 mx-auto mb-6 xl:mb-12 px-2 xl:px-0"
+          >
+            <strong>Chief Music Officer - James Taylor</strong><br />
+            A renowned artist in the music industry, James Taylor brings with him invaluable insights, overseeing artist relations and aligning the platform's music technology for the best user experience.
+          </motion.p>
+          <motion.p
+            variants={fadeIn("left", 1.2)}
+            initial="hidden"
+            animate="show"
+            className="w-full xl:w-3/4 mx-auto mb-6 xl:mb-12 px-2 xl:px-0"
+          >
+            <strong>Head of Health Innovation - Dr. Jane Lewis</strong><br />
+            A leading expert in health tech, Dr. Jane Lewis spearheads the integration of health tracking features into the ElectrAura app, ensuring users are motivated and rewarded for their health-conscious efforts.
+          </motion.p>
+          <motion.p
+            variants={fadeIn("left", 1.4)}
+            initial="hidden"
+            animate="show"
+            className="w-full xl:w-3/4 mx-auto mb-6 xl:mb-12 px-2 xl:px-0"
+          >
+            <strong>Community Relations Manager - Patrick Davis</strong><br />
+            As the link between ElectrAura and its dynamic community, Patrick Davis manages and nurtures relationships with all ElectrAura users, broadening outreach while preserving the platform's core values.
+          </motion.p>
+          <motion.p
+            variants={fadeIn("left", 1.6)}
+            initial="hidden"
+            animate="show"
+            className="w-full xl:w-3/4 mx-auto mb-6 xl:mb-12 px-2 xl:px-0"
+          >
+            Behind the scenes, our team is supported by a collective of developers, marketing professionals, support specialists, and content creators, all committed to driving the vision and values of ElectrAura.
+          </motion.p>
         </div>
-
-        {/* info */}
-        <motion.div
-          variants={fadeIn("left", 0.4)}
-          initial="hidden"
-          animate="show"
-          exit="hidden"
-          className="flex flex-col w-full xl:max-w-[48%] h-[480px]"
-        >
-          <div className="flex gap-x-4 xl:gap-x-8 mx-auto xl:mx-0 mb-4">
-            {aboutData.map((item, itemI) => (
-              <div
-                key={itemI}
-                className={`${
-                  index === itemI &&
-                  "text-accent after:w-[100%] after:bg-accent after:transition-all after:duration-300"
-                } cursor-pointer capitalize xl:text-lg relative after:w-8 after:h-[2px] after:bg-white after:absolute after:-bottom-1 after:left-0`}
-                onClick={() => setIndex(itemI)}
-              >
-                {item.title}
-              </div>
-            ))}
-          </div>
-
-          <div className="py-2 xl:py-6 flex flex-col gap-y-2 xl:gap-y-4 items-center xl:items-start">
-            {aboutData[index].info.map((item, itemI) => (
-              <div
-                key={itemI}
-                className="flex-1 flex flex-col md:flex-row max-w-max gap-x-2 items-center text-center text-white/60"
-              >
-                {/* title */}
-                <div className="font-light mb-2 md:mb-0">{item.title}</div>
-                <div className="hidden md:flex">-</div>
-                <div>{item.stage}</div>
-
-                <div className="flex gap-x-4">
-                  {/* icons */}
-                  {item.icons?.map((Icon, iconI) => (
-                    <div key={iconI} className="text-2xl text-white">
-                      <Icon />
-                    </div>
-                  ))}
-                </div>
-              </div>
-            ))}
-          </div>
-        </motion.div>
       </div>
     </div>
   );

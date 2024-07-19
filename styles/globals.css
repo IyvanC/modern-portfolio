@@ -2,9 +2,52 @@
 @tailwind components;
 @tailwind utilities;
 
+html, body, #__next {
+  height: 100%;
+  overflow: auto;
+}
+
+
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+  height: 118%;
+  width: 118%;
+}
+@media (max-width: 1199px) {
+  .absolute.z-30.w-full.items-center.px-16.xl-px-0.xl\:h-\[90px\] {
+    width: 118%;
+  }
+}
+
+.absolute.z-30.w-full.items-center.px-16.xl-px-0.xl\:h-\[90px\]{
+  background-color: #121123;
+}
+
+.text-center.flex.flex-col.justify-center.xl\:pt-40.xl\:text-left.h-full.container.mx-auto {
+  padding-top: 11em;
+}
+
+
+.flex-grow.overflow-y-auto{
+  padding-top:1em;
+}
+
+.flex-grow.overflow-y-auto {
+  background-color: #121123;
+}
+
+
+#__next{
+  background-color: #121123
+}
+
 .translate-z-0 {
   transform: translateZ(0px);
 }
+
 .swiper-horizontal > .swiper-pagination-bullets .swiper-pagination-bullet,
 .swiper-pagination-horizontal.swiper-pagination-bullets
   .swiper-pagination-bullet {
@@ -20,10 +63,10 @@
 
 @layer base {
   body {
-    @apply bg-secondary overflow-hidden leading-relaxed;
+    @apply bg-secondary overflow-auto leading-relaxed;
   }
   .page {
-    @apply w-full h-screen overflow-hidden;
+    @apply w-full min-h-screen overflow-auto;
   }
   .h1 {
     @apply text-[35px] leading-tight md:text-[60px] md:leading-[1.3] mb-8 font-semibold;

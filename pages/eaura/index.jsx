@@ -1,102 +1,18 @@
 import { motion } from "framer-motion";
-import { useState } from "react";
-import CountUp from "react-countup";
-import {
-  FaCss3,
-  FaFigma,
-  FaHtml5,
-  FaJs,
-  FaReact,
-  FaWordpress,
-} from "react-icons/fa";
-import {
-  SiAdobephotoshop,
-  SiAdobexd,
-  SiFramer,
-  SiNextdotjs,
-} from "react-icons/si";
-
 import Avatar from "../../components/Avatar";
 import Circles from "../../components/Circles";
 import { fadeIn } from "../../variants";
+import { useEffect, useState } from "react";
 
-//  data
-export const aboutData = [
-  {
-    title: "skills",
-    info: [
-      {
-        title: "Web Development",
-        icons: [
-          FaHtml5,
-          FaCss3,
-          FaJs,
-          FaReact,
-          SiNextdotjs,
-          SiFramer,
-          FaWordpress,
-        ],
-      },
-      {
-        title: "UI/UX Design",
-        icons: [FaFigma, SiAdobexd, SiAdobephotoshop],
-      },
-    ],
-  },
-  {
-    title: "awards",
-    info: [
-      {
-        title: "Webby Awards - Honoree",
-        stage: "2011 - 2012",
-      },
-      {
-        title: "Adobe Design Achievement Awards - Finalist",
-        stage: "2009 - 2010",
-      },
-    ],
-  },
-  {
-    title: "experience",
-    info: [
-      {
-        title: "UX/UI Designer - XYZ Company",
-        stage: "2012 - 2023",
-      },
-      {
-        title: "Web Developer - ABC Agency",
-        stage: "2010 - 2012",
-      },
-      {
-        title: "Intern - DEF Corporation",
-        stage: "2008 - 2010",
-      },
-    ],
-  },
-  {
-    title: "credentials",
-    info: [
-      {
-        title: "Web Development - ABC University, LA, CA",
-        stage: "2011",
-      },
-      {
-        title: "Computer Science Diploma - AV Technical Institute",
-        stage: "2009",
-      },
-      {
-        title: "Certified Graphic Designer - ABC Institute, Los Angeles, CA",
-        stage: "2006",
-      },
-    ],
-  },
-];
+const EAURA = () => {
+  const [isClient, setIsClient] = useState(false);
 
-const Eaura = () => {
-  const [index, setIndex] = useState(0);
+  useEffect(() => {
+    setIsClient(true);
+  }, []);
 
   return (
-    <div className="h-full bg-primary/30 py-32 text-center xl:text-left">
+    <div className="min-h-screen bg-primary/30 py-32 text-center xl:text-left overflow-y-auto">
       <Circles />
 
       {/* avatar img */}
@@ -110,9 +26,9 @@ const Eaura = () => {
         <Avatar />
       </motion.div>
 
-      <div className="container mx-auto h-full flex flex-col items-center xl:flex-row gap-x-6">
+      <div className="container mx-auto flex flex-col items-center xl:items-start gap-x-6 px-4 xl:px-0">
         {/* text */}
-        <div className="flex-1 flex flex-col justify-center">
+        <div className="w-full xl:w-3/4 flex flex-col justify-center">
           <motion.h2
             variants={fadeIn("right", 0.2)}
             initial="hidden"
@@ -120,120 +36,70 @@ const Eaura = () => {
             exit="hidden"
             className="h2"
           >
-            Captivating <span className="text-accent">stories</span> birth
-            magnificent designs.
+            EAURA: Our Cryptocurrency
           </motion.h2>
           <motion.p
             variants={fadeIn("right", 0.4)}
             initial="hidden"
             animate="show"
-            className="max-w-[500px] mx-auto xl:mx-0 mb-6 xl:mb-12 px-2 xl:px-0"
+            className="w-full xl:w-3/4 mx-auto mb-6 xl:mb-12 px-2 xl:px-0"
           >
-            10 years ago, I begin freelancing as a developer. Since then, I've
-            done remote work for agencies, consulted for startups, and
-            collabrated on digital products for business and consumer use.
+            At the heart of ElectrAura🩵🩻⚡️✨ lies EAURA, our revolutionary cryptocurrency. Designed and developed with cutting-edge blockchain technology, EAURA beautifully encapsulates our company ethos, brings our vision to life, and provides a token that is integrative, interactive, and innovative.
           </motion.p>
 
-          {/* counters */}
-          <motion.div
-            variants={fadeIn("right", 0.6)}
+          <motion.h3
+            variants={fadeIn("left", 0.2)}
             initial="hidden"
             animate="show"
-            className="hidden md:flex md:max-w-xl xl:max-w-none mx-auto xl:mx-0 mb-8"
+            exit="hidden"
+            className="h3"
           >
-            <div className="flex flex-1 xl:gap-x-6">
-              {/* experience */}
-              <div className="relative flex-1 after:w-[1px] after:h-full after:bg-white/10 after:absolute after:top-0 after:right-0">
-                <div className="text-2xl xl:text-4xl font-extrabold text-accent mb-2">
-                  <CountUp start={0} end={10} duration={5} />
-                </div>
-                <div className="text-xs uppercase tracking-[1px] leading-[1.4] max-w-[100px]">
-                  Years of experience.
-                </div>
-              </div>
+            What is EAURA?
+          </motion.h3>
+          <motion.p
+            variants={fadeIn("left", 0.4)}
+            initial="hidden"
+            animate="show"
+            className="w-full xl:w-3/4 mx-auto mb-6 xl:mb-12 px-2 xl:px-0"
+          >
+            EAURA is a meticulously crafted cryptocurrency that embodies our belief in the fusion of music, health, and blockchain technology. Inspired by the iPod Shuffle and EMS microcurrent technology like Healy, EAURA enables a unique understanding and appreciation of music and health.
+            EAURA fuels our platform by acting as the atomic unit of transactions, facilitating direct donations to artists and serving as rewards for health-conscious users. Functioning as the medium in a private DM, artists and fans can have exclusive interactions, making the connection personal and stirring. Meanwhile, users can earn EAURA by healthy activities such as walking and listening to music via our mobile application.
+            By holding EAURA, you become a part of a transdisciplinary community, experiencing an innovative amalgamation of health tracking, music appreciation, and cryptocurrency rewards.
+          </motion.p>
 
-              {/* clients */}
-              <div className="relative flex-1 after:w-[1px] after:h-full after:bg-white/10 after:absolute after:top-0 after:right-0">
-                <div className="text-2xl xl:text-4xl font-extrabold text-accent mb-2">
-                  <CountUp start={0} end={250} duration={5} />
-                </div>
-                <div className="text-xs uppercase tracking-[1px] leading-[1.4] max-w-[100px]">
-                  Satisfied clients.
-                </div>
-              </div>
-
-              {/* projects */}
-              <div className="relative flex-1 after:w-[1px] after:h-full after:bg-white/10 after:absolute after:top-0 after:right-0">
-                <div className="text-2xl xl:text-4xl font-extrabold text-accent mb-2">
-                  <CountUp start={0} end={650} duration={5} />
-                </div>
-                <div className="text-xs uppercase tracking-[1px] leading-[1.4] max-w-[100px]">
-                  Finished projects.
-                </div>
-              </div>
-
-              {/* awards */}
-              <div className="relative flex-1">
-                <div className="text-2xl xl:text-4xl font-extrabold text-accent mb-2">
-                  <CountUp start={0} end={8} duration={5} />
-                </div>
-                <div className="text-xs uppercase tracking-[1px] leading-[1.4] max-w-[100px]">
-                  Winning awards.
-                </div>
-              </div>
-            </div>
-          </motion.div>
+          <motion.h3
+            variants={fadeIn("left", 0.2)}
+            initial="hidden"
+            animate="show"
+            exit="hidden"
+            className="h3"
+          >
+            Why Choose EAURA?
+          </motion.h3>
+          <motion.p
+            variants={fadeIn("left", 0.4)}
+            initial="hidden"
+            animate="show"
+            className="w-full xl:w-3/4 mx-auto mb-6 xl:mb-12 px-2 xl:px-0"
+          >
+            Choosing EAURA means choosing a disruptive approach that is transforming the traditional spheres of health, music, and finance.
+            <br /><br />
+            <strong>Unique Experiences:</strong> EAURA is more than a cryptocurrency—it's a passport to unique, personal experiences with your favorite artists. By facilitating direct donations and private interactions, EAURA encourages deeper connections.
+            <br /><br />
+            <strong>Rewarding Health:</strong> Choosing EAURA means deciding to reward your health habits. With our mobile application, engaging in healthy activities such as walking and listening to music can earn you EAURA tokens.
+            <br /><br />
+            <strong>Inclusive Community:</strong> EAURA symbolizes membership to an overarching, diverse community, where artists, fans, investors, and health enthusiasts worldwide come together.
+            <br /><br />
+            <strong>Future Growth:</strong> Investing in EAURA is a vote for a progressive future. As we plan to develop custom hardware upon reaching a $10 million market cap, being an early adopter presents massive growth potential.
+            <br /><br />
+            <strong>Secure Investments:</strong> By leveraging blockchain technology, EAURA ensures your transactions and investments are secure, private, and transparent.
+            <br /><br />
+            EAURA isn’t just a cryptocurrency—it’s a lifestyle. Join us today and be a part of our vision for a healthier, more musical, and financially empowered world.
+          </motion.p>
         </div>
-
-        {/* info */}
-        <motion.div
-          variants={fadeIn("left", 0.4)}
-          initial="hidden"
-          animate="show"
-          exit="hidden"
-          className="flex flex-col w-full xl:max-w-[48%] h-[480px]"
-        >
-          <div className="flex gap-x-4 xl:gap-x-8 mx-auto xl:mx-0 mb-4">
-            {aboutData.map((item, itemI) => (
-              <div
-                key={itemI}
-                className={`${
-                  index === itemI &&
-                  "text-accent after:w-[100%] after:bg-accent after:transition-all after:duration-300"
-                } cursor-pointer capitalize xl:text-lg relative after:w-8 after:h-[2px] after:bg-white after:absolute after:-bottom-1 after:left-0`}
-                onClick={() => setIndex(itemI)}
-              >
-                {item.title}
-              </div>
-            ))}
-          </div>
-
-          <div className="py-2 xl:py-6 flex flex-col gap-y-2 xl:gap-y-4 items-center xl:items-start">
-            {aboutData[index].info.map((item, itemI) => (
-              <div
-                key={itemI}
-                className="flex-1 flex flex-col md:flex-row max-w-max gap-x-2 items-center text-center text-white/60"
-              >
-                {/* title */}
-                <div className="font-light mb-2 md:mb-0">{item.title}</div>
-                <div className="hidden md:flex">-</div>
-                <div>{item.stage}</div>
-
-                <div className="flex gap-x-4">
-                  {/* icons */}
-                  {item.icons?.map((Icon, iconI) => (
-                    <div key={iconI} className="text-2xl text-white">
-                      <Icon />
-                    </div>
-                  ))}
-                </div>
-              </div>
-            ))}
-          </div>
-        </motion.div>
       </div>
     </div>
   );
 };
 
-export default Eaura;
+export default EAURA;

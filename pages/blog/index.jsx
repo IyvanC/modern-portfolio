@@ -1,102 +1,18 @@
 import { motion } from "framer-motion";
-import { useState } from "react";
-import CountUp from "react-countup";
-import {
-  FaCss3,
-  FaFigma,
-  FaHtml5,
-  FaJs,
-  FaReact,
-  FaWordpress,
-} from "react-icons/fa";
-import {
-  SiAdobephotoshop,
-  SiAdobexd,
-  SiFramer,
-  SiNextdotjs,
-} from "react-icons/si";
-
 import Avatar from "../../components/Avatar";
 import Circles from "../../components/Circles";
 import { fadeIn } from "../../variants";
+import { useEffect, useState } from "react";
 
-//  data
-export const aboutData = [
-  {
-    title: "skills",
-    info: [
-      {
-        title: "Web Development",
-        icons: [
-          FaHtml5,
-          FaCss3,
-          FaJs,
-          FaReact,
-          SiNextdotjs,
-          SiFramer,
-          FaWordpress,
-        ],
-      },
-      {
-        title: "UI/UX Design",
-        icons: [FaFigma, SiAdobexd, SiAdobephotoshop],
-      },
-    ],
-  },
-  {
-    title: "awards",
-    info: [
-      {
-        title: "Webby Awards - Honoree",
-        stage: "2011 - 2012",
-      },
-      {
-        title: "Adobe Design Achievement Awards - Finalist",
-        stage: "2009 - 2010",
-      },
-    ],
-  },
-  {
-    title: "experience",
-    info: [
-      {
-        title: "UX/UI Designer - XYZ Company",
-        stage: "2012 - 2023",
-      },
-      {
-        title: "Web Developer - ABC Agency",
-        stage: "2010 - 2012",
-      },
-      {
-        title: "Intern - DEF Corporation",
-        stage: "2008 - 2010",
-      },
-    ],
-  },
-  {
-    title: "credentials",
-    info: [
-      {
-        title: "Web Development - ABC University, LA, CA",
-        stage: "2011",
-      },
-      {
-        title: "Computer Science Diploma - AV Technical Institute",
-        stage: "2009",
-      },
-      {
-        title: "Certified Graphic Designer - ABC Institute, Los Angeles, CA",
-        stage: "2006",
-      },
-    ],
-  },
-];
+const Blog = () => {
+  const [isClient, setIsClient] = useState(false);
 
-const About = () => {
-  const [index, setIndex] = useState(0);
+  useEffect(() => {
+    setIsClient(true);
+  }, []);
 
   return (
-    <div className="h-full bg-primary/30 py-32 text-center xl:text-left">
+    <div className="min-h-screen bg-primary/30 py-32 text-center xl:text-left overflow-y-auto">
       <Circles />
 
       {/* avatar img */}
@@ -110,9 +26,9 @@ const About = () => {
         <Avatar />
       </motion.div>
 
-      <div className="container mx-auto h-full flex flex-col items-center xl:flex-row gap-x-6">
+      <div className="container mx-auto flex flex-col items-center xl:items-start gap-x-6 px-4 xl:px-0">
         {/* text */}
-        <div className="flex-1 flex flex-col justify-center">
+        <div className="w-full xl:w-3/4 flex flex-col justify-center">
           <motion.h2
             variants={fadeIn("right", 0.2)}
             initial="hidden"
@@ -120,120 +36,96 @@ const About = () => {
             exit="hidden"
             className="h2"
           >
-            Captivating <span className="text-accent">stories</span> birth
-            magnificent designs.
+            Blog
           </motion.h2>
           <motion.p
             variants={fadeIn("right", 0.4)}
             initial="hidden"
             animate="show"
-            className="max-w-[500px] mx-auto xl:mx-0 mb-6 xl:mb-12 px-2 xl:px-0"
+            className="w-full xl:w-3/4 mx-auto mb-6 xl:mb-12 px-2 xl:px-0"
           >
-            10 years ago, I begin freelancing as a developer. Since then, I've
-            done remote work for agencies, consulted for startups, and
-            collabrated on digital products for business and consumer use.
+            Welcome to ElectrAura's🩵🩻⚡️✨ Blog – your ultimate source for the latest news, comprehensive crypto education, and exclusive artist interviews. We have gathered a rich ensemble of knowledge, insights, and expert perspectives to help you stay informed, learn, and connect with the heartbeat of our thriving community.
           </motion.p>
 
-          {/* counters */}
-          <motion.div
-            variants={fadeIn("right", 0.6)}
+          <motion.h3
+            variants={fadeIn("left", 0.2)}
             initial="hidden"
             animate="show"
-            className="hidden md:flex md:max-w-xl xl:max-w-none mx-auto xl:mx-0 mb-8"
+            exit="hidden"
+            className="h3"
           >
-            <div className="flex flex-1 xl:gap-x-6">
-              {/* experience */}
-              <div className="relative flex-1 after:w-[1px] after:h-full after:bg-white/10 after:absolute after:top-0 after:right-0">
-                <div className="text-2xl xl:text-4xl font-extrabold text-accent mb-2">
-                  <CountUp start={0} end={10} duration={5} />
-                </div>
-                <div className="text-xs uppercase tracking-[1px] leading-[1.4] max-w-[100px]">
-                  Years of experience.
-                </div>
-              </div>
+            News and Updates
+          </motion.h3>
+          <motion.p
+            variants={fadeIn("left", 0.4)}
+            initial="hidden"
+            animate="show"
+            className="w-full xl:w-3/4 mx-auto mb-6 xl:mb-12 px-2 xl:px-0"
+          >
+            In our News and Updates section, you will find:
+            <ul className="list-disc list-inside mt-4">
+              <li>The latest information about ElectrAura's advancements, new features, and ecosystem developments</li>
+              <li>Announcements regarding partnerships, collaborations, and community events</li>
+              <li>Updates about improvisations and platform advancements based on your feedback</li>
+              <li>Crucial news from the crypto world that affects our community and EAURA</li>
+            </ul>
+            Stay tuned to keep your finger on the pulse of all things ElectrAura.
+          </motion.p>
 
-              {/* clients */}
-              <div className="relative flex-1 after:w-[1px] after:h-full after:bg-white/10 after:absolute after:top-0 after:right-0">
-                <div className="text-2xl xl:text-4xl font-extrabold text-accent mb-2">
-                  <CountUp start={0} end={250} duration={5} />
-                </div>
-                <div className="text-xs uppercase tracking-[1px] leading-[1.4] max-w-[100px]">
-                  Satisfied clients.
-                </div>
-              </div>
+          <motion.h3
+            variants={fadeIn("left", 0.2)}
+            initial="hidden"
+            animate="show"
+            exit="hidden"
+            className="h3"
+          >
+            Crypto Education
+          </motion.h3>
+          <motion.p
+            variants={fadeIn("left", 0.4)}
+            initial="hidden"
+            animate="show"
+            className="w-full xl:w-3/4 mx-auto mb-6 xl:mb-12 px-2 xl:px-0"
+          >
+            As an integral part of the ElectrAura community, we want you to feel confident navigating the ecosystem of cryptocurrency. In our Crypto Education section, we offer:
+            <ul className="list-disc list-inside mt-4">
+              <li>Beginner guides to blockchain technology and cryptocurrency</li>
+              <li>Detailed insights on the EAURA economy</li>
+              <li>Information on how to invest, earn, and manage your EAURA tokens</li>
+              <li>Security guidelines to protect your assets</li>
+              <li>Updates and analyses on crypto trends, market dynamics, and more</li>
+            </ul>
+            Whether you're a crypto novice or a seasoned investor, our Crypto Education series is designed to advance your knowledge at every level.
+          </motion.p>
 
-              {/* projects */}
-              <div className="relative flex-1 after:w-[1px] after:h-full after:bg-white/10 after:absolute after:top-0 after:right-0">
-                <div className="text-2xl xl:text-4xl font-extrabold text-accent mb-2">
-                  <CountUp start={0} end={650} duration={5} />
-                </div>
-                <div className="text-xs uppercase tracking-[1px] leading-[1.4] max-w-[100px]">
-                  Finished projects.
-                </div>
-              </div>
-
-              {/* awards */}
-              <div className="relative flex-1">
-                <div className="text-2xl xl:text-4xl font-extrabold text-accent mb-2">
-                  <CountUp start={0} end={8} duration={5} />
-                </div>
-                <div className="text-xs uppercase tracking-[1px] leading-[1.4] max-w-[100px]">
-                  Winning awards.
-                </div>
-              </div>
-            </div>
-          </motion.div>
+          <motion.h3
+            variants={fadeIn("left", 0.2)}
+            initial="hidden"
+            animate="show"
+            exit="hidden"
+            className="h3"
+          >
+            Interviews with Artists
+          </motion.h3>
+          <motion.p
+            variants={fadeIn("left", 0.4)}
+            initial="hidden"
+            animate="show"
+            className="w-full xl:w-3/4 mx-auto mb-6 xl:mb-12 px-2 xl:px-0"
+          >
+            Join us as we host conversations with talented artists from around the globe in our Interviews with Artists section. Here, you can:
+            <ul className="list-disc list-inside mt-4">
+              <li>Get to know more about your favorite artists, their inspirations, and their creative process</li>
+              <li>Discover how artists are embracing EAURA and experiencing the ElectrAura community</li>
+              <li>Watch exclusive behind-the-scenes glimpses into their music-making process</li>
+              <li>Learn about their health routines and how they stay fit while delivering incredible music</li>
+            </ul>
+            Dive into these captivating stories and deepen your connection with the artists that inspire you!
+          </motion.p>
         </div>
-
-        {/* info */}
-        <motion.div
-          variants={fadeIn("left", 0.4)}
-          initial="hidden"
-          animate="show"
-          exit="hidden"
-          className="flex flex-col w-full xl:max-w-[48%] h-[480px]"
-        >
-          <div className="flex gap-x-4 xl:gap-x-8 mx-auto xl:mx-0 mb-4">
-            {aboutData.map((item, itemI) => (
-              <div
-                key={itemI}
-                className={`${
-                  index === itemI &&
-                  "text-accent after:w-[100%] after:bg-accent after:transition-all after:duration-300"
-                } cursor-pointer capitalize xl:text-lg relative after:w-8 after:h-[2px] after:bg-white after:absolute after:-bottom-1 after:left-0`}
-                onClick={() => setIndex(itemI)}
-              >
-                {item.title}
-              </div>
-            ))}
-          </div>
-
-          <div className="py-2 xl:py-6 flex flex-col gap-y-2 xl:gap-y-4 items-center xl:items-start">
-            {aboutData[index].info.map((item, itemI) => (
-              <div
-                key={itemI}
-                className="flex-1 flex flex-col md:flex-row max-w-max gap-x-2 items-center text-center text-white/60"
-              >
-                {/* title */}
-                <div className="font-light mb-2 md:mb-0">{item.title}</div>
-                <div className="hidden md:flex">-</div>
-                <div>{item.stage}</div>
-
-                <div className="flex gap-x-4">
-                  {/* icons */}
-                  {item.icons?.map((Icon, iconI) => (
-                    <div key={iconI} className="text-2xl text-white">
-                      <Icon />
-                    </div>
-                  ))}
-                </div>
-              </div>
-            ))}
-          </div>
-        </motion.div>
       </div>
     </div>
   );
 };
 
-export default About;
+export default Blog;

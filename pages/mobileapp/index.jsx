@@ -1,102 +1,18 @@
 import { motion } from "framer-motion";
-import { useState } from "react";
-import CountUp from "react-countup";
-import {
-  FaCss3,
-  FaFigma,
-  FaHtml5,
-  FaJs,
-  FaReact,
-  FaWordpress,
-} from "react-icons/fa";
-import {
-  SiAdobephotoshop,
-  SiAdobexd,
-  SiFramer,
-  SiNextdotjs,
-} from "react-icons/si";
-
 import Avatar from "../../components/Avatar";
 import Circles from "../../components/Circles";
 import { fadeIn } from "../../variants";
-
-//  data
-export const aboutData = [
-  {
-    title: "skills",
-    info: [
-      {
-        title: "Web Development",
-        icons: [
-          FaHtml5,
-          FaCss3,
-          FaJs,
-          FaReact,
-          SiNextdotjs,
-          SiFramer,
-          FaWordpress,
-        ],
-      },
-      {
-        title: "UI/UX Design",
-        icons: [FaFigma, SiAdobexd, SiAdobephotoshop],
-      },
-    ],
-  },
-  {
-    title: "awards",
-    info: [
-      {
-        title: "Webby Awards - Honoree",
-        stage: "2011 - 2012",
-      },
-      {
-        title: "Adobe Design Achievement Awards - Finalist",
-        stage: "2009 - 2010",
-      },
-    ],
-  },
-  {
-    title: "experience",
-    info: [
-      {
-        title: "UX/UI Designer - XYZ Company",
-        stage: "2012 - 2023",
-      },
-      {
-        title: "Web Developer - ABC Agency",
-        stage: "2010 - 2012",
-      },
-      {
-        title: "Intern - DEF Corporation",
-        stage: "2008 - 2010",
-      },
-    ],
-  },
-  {
-    title: "credentials",
-    info: [
-      {
-        title: "Web Development - ABC University, LA, CA",
-        stage: "2011",
-      },
-      {
-        title: "Computer Science Diploma - AV Technical Institute",
-        stage: "2009",
-      },
-      {
-        title: "Certified Graphic Designer - ABC Institute, Los Angeles, CA",
-        stage: "2006",
-      },
-    ],
-  },
-];
+import { useEffect, useState } from "react";
 
 const MobileApp = () => {
-  const [index, setIndex] = useState(0);
+  const [isClient, setIsClient] = useState(false);
+
+  useEffect(() => {
+    setIsClient(true);
+  }, []);
 
   return (
-    <div className="h-full bg-primary/30 py-32 text-center xl:text-left">
+    <div className="min-h-screen bg-primary/30 py-32 text-center xl:text-left overflow-y-auto">
       <Circles />
 
       {/* avatar img */}
@@ -110,9 +26,9 @@ const MobileApp = () => {
         <Avatar />
       </motion.div>
 
-      <div className="container mx-auto h-full flex flex-col items-center xl:flex-row gap-x-6">
+      <div className="container mx-auto flex flex-col items-center xl:items-start gap-x-6 px-4 xl:px-0">
         {/* text */}
-        <div className="flex-1 flex flex-col justify-center">
+        <div className="w-full xl:w-3/4 flex flex-col justify-center">
           <motion.h2
             variants={fadeIn("right", 0.2)}
             initial="hidden"
@@ -120,117 +36,176 @@ const MobileApp = () => {
             exit="hidden"
             className="h2"
           >
-            Captivating <span className="text-accent">stories</span> birth
-            magnificent designs.
+            The Mobile App
           </motion.h2>
           <motion.p
             variants={fadeIn("right", 0.4)}
             initial="hidden"
             animate="show"
-            className="max-w-[500px] mx-auto xl:mx-0 mb-6 xl:mb-12 px-2 xl:px-0"
+            className="w-full xl:w-3/4 mx-auto mb-6 xl:mb-12 px-2 xl:px-0"
           >
-            10 years ago, I begin freelancing as a developer. Since then, I've
-            done remote work for agencies, consulted for startups, and
-            collabrated on digital products for business and consumer use.
+            ElectrAura's mobile app is your one-stop solution for invigorating your health, enriching your music experience, and growing your wealth in cryptocurrency. Here's what the app has in store for you:
           </motion.p>
-
-          {/* counters */}
-          <motion.div
-            variants={fadeIn("right", 0.6)}
+          
+          <motion.h3
+            variants={fadeIn("left", 0.2)}
             initial="hidden"
             animate="show"
-            className="hidden md:flex md:max-w-xl xl:max-w-none mx-auto xl:mx-0 mb-8"
+            exit="hidden"
+            className="h3"
           >
-            <div className="flex flex-1 xl:gap-x-6">
-              {/* experience */}
-              <div className="relative flex-1 after:w-[1px] after:h-full after:bg-white/10 after:absolute after:top-0 after:right-0">
-                <div className="text-2xl xl:text-4xl font-extrabold text-accent mb-2">
-                  <CountUp start={0} end={10} duration={5} />
-                </div>
-                <div className="text-xs uppercase tracking-[1px] leading-[1.4] max-w-[100px]">
-                  Years of experience.
-                </div>
-              </div>
-
-              {/* clients */}
-              <div className="relative flex-1 after:w-[1px] after:h-full after:bg-white/10 after:absolute after:top-0 after:right-0">
-                <div className="text-2xl xl:text-4xl font-extrabold text-accent mb-2">
-                  <CountUp start={0} end={250} duration={5} />
-                </div>
-                <div className="text-xs uppercase tracking-[1px] leading-[1.4] max-w-[100px]">
-                  Satisfied clients.
-                </div>
-              </div>
-
-              {/* projects */}
-              <div className="relative flex-1 after:w-[1px] after:h-full after:bg-white/10 after:absolute after:top-0 after:right-0">
-                <div className="text-2xl xl:text-4xl font-extrabold text-accent mb-2">
-                  <CountUp start={0} end={650} duration={5} />
-                </div>
-                <div className="text-xs uppercase tracking-[1px] leading-[1.4] max-w-[100px]">
-                  Finished projects.
-                </div>
-              </div>
-
-              {/* awards */}
-              <div className="relative flex-1">
-                <div className="text-2xl xl:text-4xl font-extrabold text-accent mb-2">
-                  <CountUp start={0} end={8} duration={5} />
-                </div>
-                <div className="text-xs uppercase tracking-[1px] leading-[1.4] max-w-[100px]">
-                  Winning awards.
-                </div>
-              </div>
-            </div>
-          </motion.div>
+            Health & Fitness Tracking
+          </motion.h3>
+          <motion.p
+            variants={fadeIn("left", 0.4)}
+            initial="hidden"
+            animate="show"
+            className="w-full xl:w-3/4 mx-auto mb-6 xl:mb-12 px-2 xl:px-0"
+          >
+            The app provides in-depth health tracking functionalities, compiling critical metrics such as your heart rate, steps walked, and sleep patterns into a fully comprehensive health profile.
+          </motion.p>
+          
+          <motion.h3
+            variants={fadeIn("left", 0.2)}
+            initial="hidden"
+            animate="show"
+            exit="hidden"
+            className="h3"
+          >
+            Goal Setting & Achievements
+          </motion.h3>
+          <motion.p
+            variants={fadeIn("left", 0.4)}
+            initial="hidden"
+            animate="show"
+            className="w-full xl:w-3/4 mx-auto mb-6 xl:mb-12 px-2 xl:px-0"
+          >
+            Set your fitness targets and monitor your progress. Completed achievements are celebrated and rewarded with EAURA tokens!
+          </motion.p>
+          
+          <motion.h3
+            variants={fadeIn("left", 0.2)}
+            initial="hidden"
+            animate="show"
+            exit="hidden"
+            className="h3"
+          >
+            Music Streaming
+          </motion.h3>
+          <motion.p
+            variants={fadeIn("left", 0.4)}
+            initial="hidden"
+            animate="show"
+            className="w-full xl:w-3/4 mx-auto mb-6 xl:mb-12 px-2 xl:px-0"
+          >
+            With an extensive library from talented artists around the world, the app ensures you always have the perfect soundtrack for your day, workout, or downtime.
+          </motion.p>
+          
+          <motion.h3
+            variants={fadeIn("left", 0.2)}
+            initial="hidden"
+            animate="show"
+            exit="hidden"
+            className="h3"
+          >
+            Artist Donations & DMs
+          </motion.h3>
+          <motion.p
+            variants={fadeIn("left", 0.4)}
+            initial="hidden"
+            animate="show"
+            className="w-full xl:w-3/4 mx-auto mb-6 xl:mb-12 px-2 xl:px-0"
+          >
+            Show your support directly! Make donations to your favorite artists with EAURA tokens and send personal messages through our secure and private communication channel.
+          </motion.p>
+          
+          <motion.h3
+            variants={fadeIn("left", 0.2)}
+            initial="hidden"
+            animate="show"
+            exit="hidden"
+            className="h3"
+          >
+            EAURA Wallet
+          </motion.h3>
+          <motion.p
+            variants={fadeIn("left", 0.4)}
+            initial="hidden"
+            animate="show"
+            className="w-full xl:w-3/4 mx-auto mb-6 xl:mb-12 px-2 xl:px-0"
+          >
+            Manage your EAURA tokens right from the app. View your balance, earned rewards, and use your tokens to interact with artists directly.
+          </motion.p>
+          
+          <motion.h3
+            variants={fadeIn("left", 0.2)}
+            initial="hidden"
+            animate="show"
+            exit="hidden"
+            className="h3"
+          >
+            Community Engagement
+          </motion.h3>
+          <motion.p
+            variants={fadeIn("left", 0.4)}
+            initial="hidden"
+            animate="show"
+            className="w-full xl:w-3/4 mx-auto mb-6 xl:mb-12 px-2 xl:px-0"
+          >
+            The app connects you to the broader ElectrAura community. Listen to new releases, participate in exclusive events, and contribute to making ElectrAura an ever-evolving platform.
+          </motion.p>
+          
+          <motion.h3
+            variants={fadeIn("left", 0.2)}
+            initial="hidden"
+            animate="show"
+            exit="hidden"
+            className="h3"
+          >
+            Download the ElectrAura App
+          </motion.h3>
+          <motion.p
+            variants={fadeIn("left", 0.4)}
+            initial="hidden"
+            animate="show"
+            className="w-full xl:w-3/4 mx-auto mb-6 xl:mb-12 px-2 xl:px-0"
+          >
+            Are you ready to embark on this pioneering journey? The ElectrAura mobile app is available for download on both iOS and Android platforms.
+            <br /><br />
+            <strong>For iOS Users:</strong> You can download the ElectrAura app from the App Store.
+            <br /><br />
+            <strong>For Android Users:</strong> The ElectrAura app is available on the Google Play Store.
+            <br /><br />
+            Download today to witness the perfect fusion of health, music, and Web3!
+          </motion.p>
+          
+          <motion.h3
+            variants={fadeIn("left", 0.2)}
+            initial="hidden"
+            animate="show"
+            exit="hidden"
+            className="h3"
+          >
+            User Guide
+          </motion.h3>
+          <motion.p
+            variants={fadeIn("left", 0.4)}
+            initial="hidden"
+            animate="show"
+            className="w-full xl:w-3/4 mx-auto mb-6 xl:mb-12 px-2 xl:px-0"
+          >
+            Starting your journey with the ElectrAura app is easy and exciting! You can find a comprehensive User Guide within the app, providing step-by-step instructions on:
+            <ul className="list-disc list-inside mt-4">
+              <li>Creating and managing your account</li>
+              <li>Navigating the app interface</li>
+              <li>Setting up your health goals and tracking your progress</li>
+              <li>Discovering music and supporting artists</li>
+              <li>Making the most of our private artist-fan DMs</li>
+              <li>Earning and managing your EAURA tokens</li>
+            </ul>
+            Our User Guide is designed to ensure you have a smooth and enjoyable experience with the app, from your first step to every achievement you unlock along the way.
+          </motion.p>
         </div>
-
-        {/* info */}
-        <motion.div
-          variants={fadeIn("left", 0.4)}
-          initial="hidden"
-          animate="show"
-          exit="hidden"
-          className="flex flex-col w-full xl:max-w-[48%] h-[480px]"
-        >
-          <div className="flex gap-x-4 xl:gap-x-8 mx-auto xl:mx-0 mb-4">
-            {aboutData.map((item, itemI) => (
-              <div
-                key={itemI}
-                className={`${
-                  index === itemI &&
-                  "text-accent after:w-[100%] after:bg-accent after:transition-all after:duration-300"
-                } cursor-pointer capitalize xl:text-lg relative after:w-8 after:h-[2px] after:bg-white after:absolute after:-bottom-1 after:left-0`}
-                onClick={() => setIndex(itemI)}
-              >
-                {item.title}
-              </div>
-            ))}
-          </div>
-
-          <div className="py-2 xl:py-6 flex flex-col gap-y-2 xl:gap-y-4 items-center xl:items-start">
-            {aboutData[index].info.map((item, itemI) => (
-              <div
-                key={itemI}
-                className="flex-1 flex flex-col md:flex-row max-w-max gap-x-2 items-center text-center text-white/60"
-              >
-                {/* title */}
-                <div className="font-light mb-2 md:mb-0">{item.title}</div>
-                <div className="hidden md:flex">-</div>
-                <div>{item.stage}</div>
-
-                <div className="flex gap-x-4">
-                  {/* icons */}
-                  {item.icons?.map((Icon, iconI) => (
-                    <div key={iconI} className="text-2xl text-white">
-                      <Icon />
-                    </div>
-                  ))}
-                </div>
-              </div>
-            ))}
-          </div>
-        </motion.div>
       </div>
     </div>
   );

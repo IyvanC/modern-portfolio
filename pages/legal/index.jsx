@@ -1,102 +1,18 @@
 import { motion } from "framer-motion";
-import { useState } from "react";
-import CountUp from "react-countup";
-import {
-  FaCss3,
-  FaFigma,
-  FaHtml5,
-  FaJs,
-  FaReact,
-  FaWordpress,
-} from "react-icons/fa";
-import {
-  SiAdobephotoshop,
-  SiAdobexd,
-  SiFramer,
-  SiNextdotjs,
-} from "react-icons/si";
-
 import Avatar from "../../components/Avatar";
 import Circles from "../../components/Circles";
 import { fadeIn } from "../../variants";
+import { useEffect, useState } from "react";
 
-//  data
-export const aboutData = [
-  {
-    title: "skills",
-    info: [
-      {
-        title: "Web Development",
-        icons: [
-          FaHtml5,
-          FaCss3,
-          FaJs,
-          FaReact,
-          SiNextdotjs,
-          SiFramer,
-          FaWordpress,
-        ],
-      },
-      {
-        title: "UI/UX Design",
-        icons: [FaFigma, SiAdobexd, SiAdobephotoshop],
-      },
-    ],
-  },
-  {
-    title: "awards",
-    info: [
-      {
-        title: "Webby Awards - Honoree",
-        stage: "2011 - 2012",
-      },
-      {
-        title: "Adobe Design Achievement Awards - Finalist",
-        stage: "2009 - 2010",
-      },
-    ],
-  },
-  {
-    title: "experience",
-    info: [
-      {
-        title: "UX/UI Designer - XYZ Company",
-        stage: "2012 - 2023",
-      },
-      {
-        title: "Web Developer - ABC Agency",
-        stage: "2010 - 2012",
-      },
-      {
-        title: "Intern - DEF Corporation",
-        stage: "2008 - 2010",
-      },
-    ],
-  },
-  {
-    title: "credentials",
-    info: [
-      {
-        title: "Web Development - ABC University, LA, CA",
-        stage: "2011",
-      },
-      {
-        title: "Computer Science Diploma - AV Technical Institute",
-        stage: "2009",
-      },
-      {
-        title: "Certified Graphic Designer - ABC Institute, Los Angeles, CA",
-        stage: "2006",
-      },
-    ],
-  },
-];
+const Legal = () => {
+  const [isClient, setIsClient] = useState(false);
 
-const About = () => {
-  const [index, setIndex] = useState(0);
+  useEffect(() => {
+    setIsClient(true);
+  }, []);
 
   return (
-    <div className="h-full bg-primary/30 py-32 text-center xl:text-left">
+    <div className="min-h-screen bg-primary/30 py-32 text-center xl:text-left">
       <Circles />
 
       {/* avatar img */}
@@ -110,7 +26,7 @@ const About = () => {
         <Avatar />
       </motion.div>
 
-      <div className="container mx-auto h-full flex flex-col items-center xl:flex-row gap-x-6">
+      <div className="container mx-auto flex flex-col items-center xl:flex-row gap-x-6 px-4 xl:px-0">
         {/* text */}
         <div className="flex-1 flex flex-col justify-center">
           <motion.h2
@@ -120,120 +36,78 @@ const About = () => {
             exit="hidden"
             className="h2"
           >
-            Captivating <span className="text-accent">stories</span> birth
-            magnificent designs.
+            Legal Information
           </motion.h2>
           <motion.p
             variants={fadeIn("right", 0.4)}
             initial="hidden"
             animate="show"
-            className="max-w-[500px] mx-auto xl:mx-0 mb-6 xl:mb-12 px-2 xl:px-0"
+            className="max-w-full xl:max-w-[60%] mx-auto xl:mx-0 mb-6 xl:mb-12 px-2 xl:px-0"
           >
-            10 years ago, I begin freelancing as a developer. Since then, I've
-            done remote work for agencies, consulted for startups, and
-            collabrated on digital products for business and consumer use.
+            We place a keen emphasis on clarity, compliance, and the legal safeguards in place for our community members. At ElectrAura🩵🩻⚡️✨, we assure you that we adhere strictly to regulatory requirements, ensuring clear, transparent, and secure operations.
           </motion.p>
-
-          {/* counters */}
-          <motion.div
-            variants={fadeIn("right", 0.6)}
-            initial="hidden"
-            animate="show"
-            className="hidden md:flex md:max-w-xl xl:max-w-none mx-auto xl:mx-0 mb-8"
-          >
-            <div className="flex flex-1 xl:gap-x-6">
-              {/* experience */}
-              <div className="relative flex-1 after:w-[1px] after:h-full after:bg-white/10 after:absolute after:top-0 after:right-0">
-                <div className="text-2xl xl:text-4xl font-extrabold text-accent mb-2">
-                  <CountUp start={0} end={10} duration={5} />
-                </div>
-                <div className="text-xs uppercase tracking-[1px] leading-[1.4] max-w-[100px]">
-                  Years of experience.
-                </div>
-              </div>
-
-              {/* clients */}
-              <div className="relative flex-1 after:w-[1px] after:h-full after:bg-white/10 after:absolute after:top-0 after:right-0">
-                <div className="text-2xl xl:text-4xl font-extrabold text-accent mb-2">
-                  <CountUp start={0} end={250} duration={5} />
-                </div>
-                <div className="text-xs uppercase tracking-[1px] leading-[1.4] max-w-[100px]">
-                  Satisfied clients.
-                </div>
-              </div>
-
-              {/* projects */}
-              <div className="relative flex-1 after:w-[1px] after:h-full after:bg-white/10 after:absolute after:top-0 after:right-0">
-                <div className="text-2xl xl:text-4xl font-extrabold text-accent mb-2">
-                  <CountUp start={0} end={650} duration={5} />
-                </div>
-                <div className="text-xs uppercase tracking-[1px] leading-[1.4] max-w-[100px]">
-                  Finished projects.
-                </div>
-              </div>
-
-              {/* awards */}
-              <div className="relative flex-1">
-                <div className="text-2xl xl:text-4xl font-extrabold text-accent mb-2">
-                  <CountUp start={0} end={8} duration={5} />
-                </div>
-                <div className="text-xs uppercase tracking-[1px] leading-[1.4] max-w-[100px]">
-                  Winning awards.
-                </div>
-              </div>
-            </div>
-          </motion.div>
         </div>
+      </div>
 
-        {/* info */}
-        <motion.div
-          variants={fadeIn("left", 0.4)}
+      <div className="container mx-auto py-8 px-4 xl:px-0">
+        {/* Privacy Policy */}
+        <motion.h3
+          variants={fadeIn("left", 0.2)}
           initial="hidden"
           animate="show"
           exit="hidden"
-          className="flex flex-col w-full xl:max-w-[48%] h-[480px]"
+          className="h3"
         >
-          <div className="flex gap-x-4 xl:gap-x-8 mx-auto xl:mx-0 mb-4">
-            {aboutData.map((item, itemI) => (
-              <div
-                key={itemI}
-                className={`${
-                  index === itemI &&
-                  "text-accent after:w-[100%] after:bg-accent after:transition-all after:duration-300"
-                } cursor-pointer capitalize xl:text-lg relative after:w-8 after:h-[2px] after:bg-white after:absolute after:-bottom-1 after:left-0`}
-                onClick={() => setIndex(itemI)}
-              >
-                {item.title}
-              </div>
-            ))}
-          </div>
+          Privacy Policy
+        </motion.h3>
+        {isClient && (
+          <motion.p
+            variants={fadeIn("left", 0.4)}
+            initial="hidden"
+            animate="show"
+            className="max-w-full xl:max-w-[60%] mx-auto xl:mx-0 mb-6 xl:mb-12 px-2 xl:px-0"
+          >
+            At ElectrAura, we respect your privacy and are committed to protecting your personal data. Our Privacy Policy outlines:
+            <ul className="list-disc list-inside mt-4">
+              <li>The types of personal data we collect from you</li>
+              <li>How we handle and use your personal information</li>
+              <li>How we protect your data and maintain its privacy</li>
+              <li>Your rights and choices regarding your information</li>
+            </ul>
+            We continuously strive to maintain the highest standards of privacy by adopting advanced data security measures. Understanding our Privacy Policy ensures that you have full knowledge, control, and decision-making power over your data.
+          </motion.p>
+        )}
 
-          <div className="py-2 xl:py-6 flex flex-col gap-y-2 xl:gap-y-4 items-center xl:items-start">
-            {aboutData[index].info.map((item, itemI) => (
-              <div
-                key={itemI}
-                className="flex-1 flex flex-col md:flex-row max-w-max gap-x-2 items-center text-center text-white/60"
-              >
-                {/* title */}
-                <div className="font-light mb-2 md:mb-0">{item.title}</div>
-                <div className="hidden md:flex">-</div>
-                <div>{item.stage}</div>
-
-                <div className="flex gap-x-4">
-                  {/* icons */}
-                  {item.icons?.map((Icon, iconI) => (
-                    <div key={iconI} className="text-2xl text-white">
-                      <Icon />
-                    </div>
-                  ))}
-                </div>
-              </div>
-            ))}
-          </div>
-        </motion.div>
+        {/* Terms of Service */}
+        <motion.h3
+          variants={fadeIn("left", 0.2)}
+          initial="hidden"
+          animate="show"
+          exit="hidden"
+          className="h3"
+        >
+          Terms of Service
+        </motion.h3>
+        {isClient && (
+          <motion.p
+            variants={fadeIn("left", 0.4)}
+            initial="hidden"
+            animate="show"
+            className="max-w-full xl:max-w-[60%] mx-auto xl:mx-0 mb-6 xl:mb-12 px-2 xl:px-0"
+          >
+            By using the ElectrAura platform, you agree to our Terms of Service. This agreement outlines:
+            <ul className="list-disc list-inside mt-4">
+              <li>Your obligations as an ElectrAura user</li>
+              <li>Our responsibilities as a service provider</li>
+              <li>Detailed guidelines about the fair and permitted use of our platform</li>
+              <li>The limitations and disclaimers relevant to our service</li>
+            </ul>
+            We advise you to read through our Terms of Service thoroughly to understand the framework that governs your use of ElectrAura and our obligations to you. This ensures a fair, harmonious, and civil environment for all our community members.
+          </motion.p>
+        )}
       </div>
     </div>
   );
 };
 
-export default About;
+export default Legal;

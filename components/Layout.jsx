@@ -14,12 +14,10 @@ const sora = Sora({
 
 const Layout = ({ children }) => {
   return (
-    <main
-      className={`page bg-site text-white bg-cover bg-no-repeat ${sora.variable} font-sora relative`}
-    >
+    <div className={`min-h-screen flex flex-col ${sora.variable} font-sora bg-site text-white bg-cover bg-no-repeat`}>
       {/* metadata */}
       <Head>
-        <title>Ethan Smith | Portfolio</title>
+        <title>ElectrAura | Legal</title>
         <meta
           name="description"
           content="Ethan Smith is a Full-stack web developer with 10+ years of experience."
@@ -37,8 +35,10 @@ const Layout = ({ children }) => {
       <Header />
 
       {/* main content */}
-      {children}
-    </main>
+      <main className="flex-grow overflow-y-auto">
+        {children}
+      </main>
+    </div>
   );
 };
 
