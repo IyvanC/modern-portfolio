@@ -17,7 +17,7 @@ const Layout = ({ children }) => {
     <div className={`min-h-screen flex flex-col ${sora.variable} font-sora bg-site text-white bg-cover bg-no-repeat`}>
       {/* metadata */}
       <Head>
-        <title>ElectrAura | Legal</title>
+        <title>ElectrAura</title>
         <meta
           name="description"
           content="Ethan Smith is a Full-stack web developer with 10+ years of experience."
