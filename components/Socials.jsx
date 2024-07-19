@@ -19,7 +19,7 @@ export const socialData = [
   },
   {
     name: "WhitePaper",
-    link: "https://jumpshare.com/v/hvjRV2cxNp50ThyCkF5F",
+    link: "https://jmp.sh/xrjiKx8v",
     Icon: RiFilePaper2Line,
   },
 ];
